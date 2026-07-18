@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new page</title>
+    <style>
+        .container{
+            background-color: yellow;
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            display: grid;
+            gap: 4px;
+            grid-template-areas:
+            "hr"
+            "sd"
+            "Ct"
+            "ft";
+        }
+        .box{
+            background-color: lightgreen;
+            border: 1px solid red;
+        }
+        #A{
+            grid-area: hr;
+        }
+        #B{
+            grid-area: sd;
+        }
+        #C{
+            grid-area: Ct;
+        }
+        #D{
+            grid-area: ft;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="A">
+            <a href="index.html">Click here to move backward</a>
+        </div>
+        <div class="box" id="B">Sidebar</div>
+        <div class="box" id="C">Content</div>
+        <div class="box" id="D">Footer</div>
+    </div>
+</body>
+</html>

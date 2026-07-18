@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Grid Properties</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 800px;
+            height: 600px;
+            background-color: brown;
+            display: grid;
+            grid-template-rows: 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+            gap: 10px;
+            /* justify-content: start;
+            justify-content: end;
+            justify-content: center;
+            justify-content: space-between;
+            justify-content: space-evenly;
+            justify-content: space-around; */
+            align-items: start;
+            align-items: end;
+            align-items: baseline; /*content ko baseline kr dete hai*/
+            align-items: stretch;
+
+            align-content: space-between;
+            align-content: space-evenly;
+            align-content: space-around;
+
+            justify-content: center;
+            align-content: center;
+            /*or use*/
+            place-content: center;
+
+            justify-items: center;
+            align-items: center;
+            /*or use*/
+            place-items:center ;
+
+        }
+        .box{
+            border: 1px solid black;
+            background-color: lightgreen;
+        }
+        #A{
+            /* justify-self: start;
+            justify-self: center;
+            justify-self: end; */
+
+            /* align-self: start;
+            align-self: end;
+            align-self: center;
+            justify-self: center; */
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="A">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+        <div class="box">Box6</div>
+    </div>
+</body>
+</html>

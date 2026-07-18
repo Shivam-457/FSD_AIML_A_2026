@@ -1,0 +1,28 @@
+.container{
+            height: 500px;
+            width: 500px;
+            background-color: green;
+            border: 3px solid red;
+        }
+        .box{
+            margin: 20px;
+            height: 150px;
+            width: 150px;
+            border: 2px solid orange;
+            background-color: aqua;
+            /* transition: 2s; */
+            /* transition-property: background-color;
+            transition-property: all; */
+
+            /*transition: all 5s ease 4s;*/  /*property duration/timing function delay(kitne der bad shuru krna hai transition)*/
+            /* transition: 3s ease-in 1s; */
+            /*or use*/
+            transition-property: transform;
+            transition-duration: 3s;
+            transition-timing-function: ease-in;
+            transition-delay: 1s;
+        }
+        .box:hover{
+             background-color: brown; 
+            transform: translateX(501px) rotate(360deg) scale(2);
+        }

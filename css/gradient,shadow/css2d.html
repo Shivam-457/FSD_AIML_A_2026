@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hi{
+            background-color: aqua;
+            transform: translate(0px,200px); /*idhar udhar move krta h box ko*/
+            /* transform: rotate(-45deg); box ko rotate kr deta hai*/
+            margin:200px; 
+            transform:scale(1,3) /*box ko zoom kr deta phele value horizontal m dusre vertical m zoom kr dete*/
+        }
+        .box{
+            background-color: orange;
+            transform: translateX(100px);
+            transform:translateY(200px);
+            transform:rotate(180deg);
+            transform:scaleX(1.5);  /*width bdata*/
+            transform: scaleY(2.5); /*height bdata*/
+        }
+        .box1{
+            margin:100px;
+            background-color: red;
+            transform:scale(1,5);
+            transform:skew(135deg); /*tilt sa dikhta hai*/
+            transform: translateX(100px)
+           translateY(200px)
+           rotate(180deg)
+           scaleX(1.5)
+           scaleY(2.5)
+           skew(45deg);
+        }
+        .box2{
+            background-color: pink;
+            transform: matrix(1,0,0,1,100,50); /*scale,skew,translate ek sath use hota*/
+        }
+    </style>
+</head>
+<body>
+    <div class="hi">ABCD</div>
+    <div class="box">EFGH</div>
+    <div class="box1">GHIJ</div>
+    <div class="box2">hjbc jhcb sd</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+    <style>
+        .container{
+            background-color: brown;
+            height: 500px;
+            width: 800px;
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; /*3 column ek row m and unke size*/
+            /* grid-template-rows: 90px 90px 90px 90px;  /*4 row ek column and unke size */
+            /* grid-template-columns: 1fr 1fr 1fr; 3 row equal part lege */
+            grid-template-columns: repeat(3,1fr) 200px;  /*shuru k 3 1fr k and last wale 200px k*/
+            grid-template-rows: repeat(3,1fr);
+            gap: 15px;
+        }
+        .box{
+            background-color: aqua;
+            border: 3px solid black;
+            /* height: 80px;
+            width: 100px; */
+        }
+        #box1{
+            grid-column-start:1 ;
+            grid-column-end: 3;
+        }
+        #box3{
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .con{
+            height: 500px;
+            width: 1000px;
+            background-color: brown;
+            padding: 2px;
+            display: grid;
+            gap: 2px;
+            grid-template-rows: 30px 1fr 30px;
+            grid-template-columns: 250px 1fr;
+        }
+        .boxnew{
+            background-color: aqua;
+        }
+        #A{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        #B{
+            grid-row: 2/span 1; /*or use grid row start 2 se grid row end 4 tak*/
+        }
+        #C{
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        #D{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .cona{
+            width: 800px;
+            height: 400px;
+            padding: 2px;
+            background-color: brown;
+            grid-template-rows: 30px 1fr 30px;
+            grid-template-columns: 150px 1fr 150px;
+            display: grid;
+            gap: 2px;
+        }
+        .bon{
+            background-color: aqua;
+            
+        }
+        #k1{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        #k2,#k4{
+        }
+        #k3{
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        #k5{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">A</div>
+        <div class="box">B</div>
+        <div class="box" id="box3">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+        <div class="box">F</div>
+        <div class="box">G</div>
+        <div class="box">H</div>
+        <div class="box">I</div>
+        <div class="box">J</div>
+    </div>
+    <br>
+    <!-- layot making -->
+     <div class="con">
+        <div class="boxnew" id="A">box1</div>
+        <div class="boxnew" id="B">box2</div>
+        <div class="boxnew" id="C">box3</div>
+        <div class="boxnew" id="D">box4</div>
+     </div>
+     <br>
+     <!-- gfg layout making -->
+      <div class="cona">
+        <div class="bon" id="k1">box1</div>
+        <div class="bon" id="k2">box2</div>
+        <div class="bon" id="k3">box3</div>
+        <div class="bon" id="k4">box4</div>
+        <div class="bon" id="k5">box5</div>
+      </div>
+</body>
+</html>

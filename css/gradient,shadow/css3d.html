@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#D Transform</title>
+    <style>
+        div{
+            background-color: aqua;
+            border:1px solid black;
+            width:100px;
+            height:100px;
+        }
+        .translated{
+            transform: perspective(10px) translateZ(-10px);
+        }
+        .scale{
+            margin:500px;
+            /* transform:rotate(45deg); no need of perspective() */
+            transform:perspective(350px) scaleZ(6) rotateX(-45deg) rotateY(30deg);
+        }
+        .static{
+            margin:200px;
+            transform: perspective(1000px) translateZ(-150px);
+             /*transform: rotateY(60deg); */
+             transform: scaleZ(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="static">static</div>
+    <div class="translated">translated</div>
+    <div class="scale">scale</div>
+</body>
+</html>

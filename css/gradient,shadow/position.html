@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width:1000px;
+            height:1000px;
+            background-color: yellow;
+            border:1px solid black;
+        }
+        .box{
+            position:static;
+            top:50px; /*ignore hoga kyuki position static h by default static h hote*/
+
+        }
+        p{
+            position: static;/*jis order m h element use order m rhte h*/
+        }
+        div{
+            display: inline-block;
+            width:100px;
+            height:100px;
+            background-color: aqua;
+            border:1px solid black;
+        }
+        #new{
+           position:fixed;  /*scroll par position fixed ho jate h viewport k hisab s*/
+        }
+        #hi{
+            position:absolute; /* Agar nearest parent (ancestor) ki position static nahi hai
+   (relative, absolute, fixed, sticky),
+   to absolute element uske respect me position hoga.
+   Warna viewport/body ke respect me position hoga. */
+        }
+        #kk{
+            position: relative; /*top,bottom,left,right se move kr skte h baki jo phele position thi vo reserve rhte hai*/
+           top:80px;
+           left:50px;
+        }
+        #ll{
+           position:sticky;  /* Pehle static ki tarah behave karta hai.
+   Jab scroll karte hue top:0 (ya jo value di ho) ko touch karta hai,
+   tab fixed ki tarah screen par stick ho jata hai. */
+           top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!--  <p>cvdcd</p>
+        <h1>dccwce</h1>
+        <p>scvvdv</p> 
+        <h3>ffvdvdvd</h3> -->
+        
+        <div id="new">A</div>
+        <div id="hi">B</div>
+        <div id="kk">C</div>
+        <div id="ll">D</div>
+        <div class="box">dqawdwqwd</div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            height: 600px;
+            width: 600px;
+            background-color: yellow;
+            grid-template-rows: 30px 1fr 30px;
+            grid-template-columns: 150px 1fr;
+            display: grid;
+            gap: 4px;
+            grid-template-areas:
+            "hd hd"
+            "sd ct"
+            "ft ft";
+        }
+        .box{
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        #hd{
+            grid-area:hd;
+        }
+        #ft{
+            grid-area: ft;
+        }
+        #sd{
+            grid-area: sd;
+        }
+        #ct{
+            grid-area:ct;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="hd">
+            <a href="newindex.html">Click Here to move forward</a>
+        </div>
+        <div class="box" id="sd">Sidebar</div>
+        <div class="box" id="ct">Content</div>
+        <div class="box" id="ft">Footer</div>
+    </div>
+</body>
+</html>

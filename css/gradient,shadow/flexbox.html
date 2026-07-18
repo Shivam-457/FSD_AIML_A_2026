@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .container{
+            width:190px;
+            height: 500px;
+            background-color: white;
+            border: 2px solid black;
+            display: flex;  /*flex ko use krne k liye hme y use krna hota hai*/
+            /* flex-direction: row-reverse; ab reverse direction se chlne shuru hoge */
+            /* flex-direction: row;  /*agr flex box ya flex elements k direction badlne h to y use krte h */
+            /* flex-wrap:wrap; */
+            flex-flow: row wrap; /*dono ka kam ek sath krte flex direction and flex wrap ka*/
+            justify-content:flex-start ;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-between;
+            justify-content: space-evenly;
+            justify-content: space-around; /*copy m padhlo boxes ko idhar udhar ghumata hai*/
+            align-items: flex-start;/*y cross section k across krte h and justify main k across*/
+            align-items: flex-end;
+            align-items: center;
+            align-items: stretch;
+            align-items: baseline;/*agr sbka base diff h to y same kr dega*/
+            justify-content: center;
+            align-items: center;
+            /* gap: 10px; sab boxes k beech m equal gap ata and boxes k bhar nhi lata y gap
+            /* column-gap: 10px;
+            row-gap: 10px; */ 
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-between;
+            align-content: space-evenly;
+            align-content: space-around;
+            
+        } 
+        .box{
+            width:30px;
+            border: 1px solid brown;
+            background-color: pink;
+            /* flex-grow:1; jitna space available hoga utna y occupy kr lege */
+            flex: 2 3 4 100px;/*multiple ek sath order grow shrink basis*/
+            }
+        #box1{
+            order:3;
+            flex-grow:1;
+            flex-shrink: 3; /*size kam hota h squeeze krne m*/
+            align-self: flex-end;
+        }
+        #box3{
+            order:5;/*jiska order jitna jyada vo utna bad m aaega by default 0 hota hai*/
+            align-self: stretch;
+        }
+        #box2{
+            flex-grow:2;
+            flex-shrink: 4;
+            /* flex-basis:50%; due to border y ek line ek h aa rha tha ab vo fit kr dega b box 50% and aur koi boixes bhi */
+        }
+        #box4{
+            flex-basis: 75px;  /*d k width bad gye isme overflow content h to box ka size badh jata width jaisa h bas width m content hidden ho jata*/
+            align-self:stretch;
+        }
+        *{
+            box-sizing: border-box; /*y flex basis m jo ek block m nhi aa pa rha tha 50% width + 2px left right border to y content ka size kam kr dega and ek block m aa jaege*/
+        }
+        .box6{
+            background-color: aqua;
+            align-items: flex-start;
+            align-items: stretch; /*y nhi chal rha bad m dekhege pr y items ko uper niche strech krata h single box ko*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">A</div>
+        <div class="box" id="box2">B</div>
+        <div class="box" id="box3">C</div>
+        <div class="box" id="box4">D</div>
+        <div class="box6">b</div>
+    </div>
+</body>
+</html>

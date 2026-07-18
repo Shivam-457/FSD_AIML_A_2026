@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media queries</title>
+    <style>
+        .container{
+            background-color: yellow;
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-rows: 30px 1fr 30px;
+            grid-template-columns: 150px 1fr;
+            grid-template-areas: 
+            "hr hr"
+            "sd ct"
+            "ft ft";
+            gap: 4px;
+        }
+        .box{
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        #A{
+            grid-area: hr;
+        }
+        #B{
+            grid-area: sd;
+        }
+        #C{
+            grid-area: ct;
+        }
+        #D{
+            grid-area: ft;
+        }
+        @media(max-width:1000px) and (min-width:501px)
+        {
+            .container{
+                grid-template-rows: 30px 1fr 1fr 30px ;
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "hr"
+                "sd"
+                "ct"
+                "ft";
+                gap: 50px;
+            }
+        }
+        @media(max-width:500px)
+        {
+            .container{
+                grid-template-rows: 30px 1fr 1fr 30px ;
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "hr"
+                "sd"
+                "ct"
+                "ft";
+                gap: 25px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="A">Header</div>
+        <div class="box" id="B">Sidebar</div>
+        <div class="box" id="C">Content</div>
+        <div class="box" id="D">Footer</div>
+    </div>
+</body>
+</html>

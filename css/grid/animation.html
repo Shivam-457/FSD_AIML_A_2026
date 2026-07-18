@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .container
+        {
+            width: 100%;
+            height: 215px;
+            background-color: yellow;
+            border: 2px solid black;
+        }
+        .box{
+            border: 2px solid green;
+            background-color: aqua;
+            width: 212px;
+            height: 212px;
+
+            animation-name: shivam;
+            animation-duration: 3s;
+            animation-iteration-count:1; /*kitne bar animation chlegeg*/
+            animation-timing-function: ease;
+            animation-delay: 1s;
+            animation-direction: alternate;
+            /* animation-fill-mode: forwards; */
+            animation-fill-mode: backwards;
+        }
+        /* @keyframes shivam {
+            from{
+                width: 212px;
+            }
+            to{
+                width: 100%;
+            }
+        } */
+
+        /*or*/
+        @keyframes shivam{
+            0%{
+                width: 212px;
+                background-color: aqua;
+            }
+            30%{
+                width: 35%;
+                background-color: orange;
+            }
+            65%{
+                width: 70%;
+                background-color: white;
+            }
+            100%{
+                width: 700%;
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">BOX</div>
+    </div>
+</body>
+</html>

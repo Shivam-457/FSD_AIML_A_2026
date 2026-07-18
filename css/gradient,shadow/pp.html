@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: aqua;
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            /* justify-content:space-evenly ; */
+            /* align-items: baseline; */
+            /* align-content: center; */
+        }
+        .box{
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            border: 2px solid brown;
+            align-self: center;
+        }
+        #new{
+            /* flex-grow: 1; */
+            align-self: flex-start;
+        }
+        #hello{
+            /* flex-grow: 8; */
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="new">A</div>
+        <div class="box" id="hello">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+    </div>
+</body>
+</html>
