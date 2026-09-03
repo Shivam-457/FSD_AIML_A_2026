@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GitHub User Details</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: white;
+        color: grey;
+        text-align: center;
+      }
+
+      h1 {
+        color: aqua;
+      }
+
+      .search-box {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .search-box input {
+        width: 250px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      .search-box button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        background: blue;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .search-box button:hover {
+        background: darkblue;
+      }
+
+      .user-card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 30px auto;
+        background: white;
+        text-align: center;
+      }
+
+      .user-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .user-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid blue;
+      }
+
+      .user-card h2 {
+        margin: 10px 0;
+        color: blue;
+      }
+
+      .user-card p {
+        margin: 6px 0;
+        font-size: 14px;
+      }
+
+      .user-card a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: lightblue;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+
+      .user-card a:hover {
+        background: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>GitHub User Details</h1>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter GitHub username"
+      />
+
+      <button onclick="searchUser()">Search</button>
+    </div>
+
+    <!-- User Details -->
+    <div id="user"></div>
+
+    <script>
+
+      async function loaduserdetails(username) {
+
+        const userDiv = document.getElementById("user");
+
+        userDiv.innerHTML = "<p>Loading...</p>";
+
+        try {
+
+          const url = `https://api.github.com/users/${username}`;
+
+          const res = await fetch(url);
+
+          if (!res.ok) {
+            throw new Error(`User not found`);
+          }
+
+          const data = await res.json();
+
+          userDiv.innerHTML = `
+            <div class="user-card">
+
+              <img
+                src="${data.avatar_url}"
+                alt="Avatar"
+              >
+
+              <h2>${data.login}</h2>
+
+              <p>
+                <strong>Name:</strong>
+                ${data.name || "N/A"}
+              </p>
+
+              <p>
+                <strong>Bio:</strong>
+                ${data.bio || "No bio available"}
+              </p>
+
+              <p>
+                <strong>Public Repos:</strong>
+                ${data.public_repos}
+              </p>
+
+              <p>
+                <strong>Followers:</strong>
+                ${data.followers}
+              </p>
+
+              <p>
+                <strong>Following:</strong>
+                ${data.following}
+              </p>
+
+              <a
+                href="${data.html_url}"
+                target="_blank"
+              >
+                View Profile
+              </a>
+
+            </div>
+          `;
+
+        } catch (err) {
+
+          userDiv.innerHTML = `
+            <p style="color:red;">
+              ${err.message}
+            </p>
+          `;
+
+        }
+      }
+
+
+      // Search button function
+      function searchUser() {
+
+        const username =
+          document.getElementById("username").value.trim();
+
+        if (username === "") {
+
+          document.getElementById("user").innerHTML =
+            `<p style="color:red;">Please enter a username</p>`;
+
+          return;
+        }
+
+        loaduserdetails(username);
+      }
+
+
+      // Press Enter to search
+      document
+        .getElementById("username")
+        .addEventListener("keypress", function(event) {
+
+          if (event.key === "Enter") {
+            searchUser();
+          }
+
+        });
+
+
+      // Default user
+      loaduserdetails("Shivam-457");
+
+    </script>
+
+  </body>
+</html>
